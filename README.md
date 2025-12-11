@@ -45,8 +45,8 @@ react-monorepo
 ## 说明
 
 - 所有应用及共享包共享 `tsconfig.base.json` 中的路径别名 (`@repo/ui`, `@repo/utils`)，无需相对路径地狱。
-- 所有应用预置 Tailwind + shadcn 常用依赖（`class-variance-authority`, `tailwindcss-animate`, `tailwind-merge`），可直接按 shadcn 文档扩展组件。
-- Client/Vendor 同样基于 Next.js，演示如何在不同业务门户中使用共享 UI 组件和工具函数。
+- 所有应用预置 Tailwind + shadcn 常用依赖（`class-variance-authority`, `tailwindcss-animate`, `tailwind-merge`），并共享 `AdminLayout`/`TalentManager` 等 shadcn 风格组件，统一体验。
+- Client/Vendor 同样基于 Next.js，展示三套门户如何在同一 Layout 里实现 Talent 模块的增删改查。
 - `pnpm dev`/`pnpm build`/`pnpm lint` 会递归到所有 workspace，方便统一管理。
 
 根据需要继续添加更多 packages (如 `api`, `config` 等) 即可保持结构清晰。
