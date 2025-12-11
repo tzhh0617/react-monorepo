@@ -1,0 +1,9 @@
+node_modules
+.pnp.*
+dist
+.next
+out
+.vercel
+.env
+.DS_Store
+pnpm-lock.yaml

@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "strict": true,
+    "jsx": "react-jsx",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "paths": {
+      "@repo/ui": ["packages/ui/src"],
+      "@repo/utils": ["packages/utils/src"],
+      "@repo/ui/*": ["packages/ui/src/*"],
+      "@repo/utils/*": ["packages/utils/src/*"]
+    }
+  }
+}

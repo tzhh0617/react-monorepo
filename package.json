@@ -1,0 +1,16 @@
+{
+  "name": "react-monorepo",
+  "private": true,
+  "version": "0.0.0",
+  "packageManager": "pnpm@9.0.0",
+  "scripts": {
+    "install:all": "pnpm install --recursive",
+    "dev": "pnpm -r --workspace-concurrency=1 run dev",
+    "dev:admin": "pnpm --filter @apps/admin dev",
+    "dev:client": "pnpm --filter @apps/client dev",
+    "dev:vendor": "pnpm --filter @apps/vendor dev",
+    "build": "pnpm -r run build",
+    "lint": "pnpm -r run lint",
+    "test": "pnpm -r --if-present run test"
+  }
+}
