@@ -10,6 +10,10 @@
     "dev:client": "pnpm --filter @apps/client dev",
     "dev:vendor": "pnpm --filter @apps/vendor dev",
     "build": "pnpm -r run build",
+    "build:admin": "pnpm --filter @apps/admin build",
+    "build:client": "pnpm --filter @apps/client build",
+    "build:vendor": "pnpm --filter @apps/vendor build",
+    "build:all": "pnpm run build:admin && pnpm run build:client && pnpm run build:vendor",
     "lint": "pnpm -r run lint",
     "test": "pnpm -r --if-present run test"
   },
