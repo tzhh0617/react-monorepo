@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "../card";
 import { Badge } from "../badge";
 import { Input } from "../input";
 import { Label } from "../label";
-import { Select } from "../select";
+import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "../select";
 
 export interface Talent {
   id: number;
@@ -124,13 +124,17 @@ export const TalentManager: React.FC<TalentManagerProps> = ({ initialTalents = d
             <div className="space-y-2">
               <Label htmlFor="talent-status">状态</Label>
               <Select
-                id="talent-status"
                 value={form.status}
-                onChange={(event) => setForm((prev) => ({ ...prev, status: event.target.value as Talent["status"] }))}
+                onValueChange={(value) => setForm((prev) => ({ ...prev, status: value as Talent["status"] }))}
               >
-                <option value="Active">Active</option>
-                <option value="Interview">Interview</option>
-                <option value="Inactive">Inactive</option>
+                <SelectTrigger>
+                  <SelectValue placeholder="选择状态" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="Active">Active</SelectItem>
+                  <SelectItem value="Interview">Interview</SelectItem>
+                  <SelectItem value="Inactive">Inactive</SelectItem>
+                </SelectContent>
               </Select>
             </div>
             <div className="flex gap-3">
@@ -169,7 +173,7 @@ export const TalentManager: React.FC<TalentManagerProps> = ({ initialTalents = d
                   <td className="py-3 text-slate-600">{talent.role}</td>
                   <td className="py-3 text-slate-500">{talent.email}</td>
                   <td className="py-3">
-                    <Badge variant={talent.status === "Active" ? "success" : talent.status === "Interview" ? "warning" : "outline"}>
+                    <Badge variant={talent.status === "Active" ? "default" : talent.status === "Interview" ? "secondary" : "outline"}>
                       {talent.status}
                     </Badge>
                   </td>
