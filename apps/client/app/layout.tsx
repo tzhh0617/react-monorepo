@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import "@repo/ui/styles/globals.css";
 
 export const metadata: Metadata = {
   title: "Client Experience",
@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" data-portal="client" suppressHydrationWarning>
       <body className="bg-background text-foreground">
         <main className="min-h-screen bg-gradient-to-b from-white via-slate-50 to-slate-100">
           <div className="mx-auto max-w-5xl px-6 py-10">{children}</div>
