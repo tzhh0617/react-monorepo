@@ -12,5 +12,9 @@
     "build": "pnpm -r run build",
     "lint": "pnpm -r run lint",
     "test": "pnpm -r --if-present run test"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.3",
+    "tailwindcss-animate": "^1.0.7"
   }
 }
